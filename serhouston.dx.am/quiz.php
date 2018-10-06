@@ -9,6 +9,31 @@
 	<link rel="stylesheet" type="text/css" href="app1.css">
 </head>
 <body>
+        <?php
+            $priorities = [
+                "house" => 4,
+                "bench" => 1,
+                "car" => 3,
+                "tent" => 2,
+                "single" => 3,
+                "married" => 4,
+                "divorced" => 2,
+                "widowed" => 1,
+                "GED" => 2,
+                "HS" => 3,
+                "college" => 4,
+                "none" => 1,
+            ];
+
+            // for future release ------------------------------------------
+            //$living = mysqli_real_escape_string($dbcon, $_POST['living']);
+            //$marital = mysqli_real_escape_string($dbcon, $_POST['marital']);
+            //$education = mysqli_real_escape_string($dbcon, $_POST['education']);
+            
+            //$totalPriority = $priorities[$living] + $priorities[$marital] + $priorities[$education];
+            
+            //$addmember = mysqli_query($dbcon, "INSERT INTO priorityTable (priority) VALUES('".$totalPriority."')");
+        ?>
         <div class="container"> 
         <!-- Brand and toggle get grouped for better mobile display -->
         
