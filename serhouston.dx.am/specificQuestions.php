@@ -31,17 +31,23 @@
   </div>
   </div>
   <div>
-  	<iframe class ="vid" width="420" height="315"
+  	<iframe class ="center" width="420" height="315"
 src="https://www.youtube.com/embed/tgbNymZ7vqY" align="bottom">
 </iframe>
   </div>
-  <button class="btn btn-primary" ><a href="https://google.com">Back</a></button>
-  <button class="btn btn-primary" type="submit"><a href="https://google.com">Next</a></button>
+  <button class="btn btn-primary" ><a href="quiz.php">Back</a></button>
+  <button class="btn btn-primary" type="submit"><a href="end.php">Next</a></button>
 </form>
 				</p>
 			 </div>
 			</div>
-		</div>
+		</div><p class="image">
+		<img src="serlogo50.jpg" class="center">
+		</p>
+		<p class="ending">Privacy Notice:<br>
+We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.
+We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request.
+		</p>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
