@@ -40,7 +40,7 @@
             <form class="needs-validation" novalidate>
               <div class="form-row">
                 <div class="col-md-4 mb-3">
-                  <label for="inputFirstName">First Name</label><span class="error"> * <?php echo $firstNameErr;?></span>
+                  <label for="inputFirstName">First Name</label><span class="error"> * <?php echo $inputFirstNameErr;?></span>
                   <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
                   <div class="valid-tooltip">
                     Looks good!
@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="inputLastName">Last Name</label>
+                <label for="inputLastName">Last Name</label><span class="error"> * <?php echo $inputLastNameErr;?></span>
                 <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                 <div class="valid-tooltip">
                   Looks good!
@@ -84,7 +84,7 @@
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                  <label for="inputPhoneNumber">Phone number</label>
+                  <label for="inputPhoneNumber">Phone number</label><span class="error"> * <?php echo $inputPhoneNumberErr;?></span>
                   <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                   <div class="invalid-tooltip">
                     Please provide a valid cell phone number.
