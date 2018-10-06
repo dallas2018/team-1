@@ -125,8 +125,8 @@
 function check_empty_required_fields() {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
+      global $firstNameErr;
       $firstNameErr = "Email is required";
-      global $firstNameErr = "Email is required";
     }
   }
 }
