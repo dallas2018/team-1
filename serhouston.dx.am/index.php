@@ -40,8 +40,7 @@
             <form class="needs-validation" novalidate>
               <div class="form-row">
                 <div class="col-md-4 mb-3">
-                  <span class="error"> * <?php echo $firstNameErr;?></span>
-                  <label for="validationTooltip01">First name</label>
+                  <label for="validationTooltip01">First name</label><span class="error"> * <?php echo $firstNameErr;?></span>
                   <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" required>
                   <div class="valid-tooltip">
                     Looks good!
