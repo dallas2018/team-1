@@ -146,7 +146,7 @@ include "base.php";
                   <label for="inputCounty">County</label>
                   <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
                   <div class="invalid-tooltip">
-                    Please provide a County.
+                    Please provide a county.
                   </div>
                 </div>
           </div>
@@ -154,7 +154,7 @@ include "base.php";
             <label for="inputBirthday">Date of Birth</label><span class="error"> * </span>
             <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" max="1900-1-1" required>
             <div class="invalid-tooltip">
-              Please provide a County.
+              Please provide a birthday.
             </div>
           </div>
         </div>
