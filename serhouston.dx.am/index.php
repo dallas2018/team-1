@@ -73,15 +73,6 @@ include "base.php";
             $zipcode = mysqli_real_escape_string($dbcon, $_POST['inputZipcode']);
             $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhoneNumber']);
             $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
-
-            $time1 = date_create($date_1);
-            $time2 = date("m/d/y");
-            $interval = date_diff($time1, $time2);
-            if($interval < 16){
-              <div class="invalid-tooltip">
-                      Please provide a valid city.
-                    </div>
-            }
             $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
@@ -197,23 +188,18 @@ function launch_modal()
         </div>
         <div class="modal-body">
           <div class="d-inline-flex">
-          <div class="d-flex justify-content-between">
-                  <div class="container"> 
-                          <img src="images/ciara.jpg" alt="ser ciara">
-                  </div> 
-                  <div class="popup">Hello, I'm Ciara and I'm here to help. <br/>
+                <img src="images/ciara.jpg" alt="ser ciara">
+              
+                  <div class="popup"> Hello, I'm Ciara and I'm here to help. <br/>
                   It looks like you've been inactive for the past 10 minutes, so don't forget to finish! <br/>
                   If you need help filling out the application, feel free to call me at 713.773.6000 x 140, or email me at Ciara.Major@serhouston.org</div>       
-            </div> 
           </div> 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="refreshPage()">Resume Application</button>
         </div>
       </div>
     </div>
   </div>
   <?php
 }
+?>
 ?>
 </html>
