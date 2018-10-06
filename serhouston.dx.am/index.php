@@ -33,30 +33,30 @@
             </div>
             <?php
               // define variables and set to empty values
-              $firstNameErr = "";
+              $inputFirstNameErr = $inputLastNameErr = $inputPhoneNumberErr = "";
               check_empty_required_fields()
             ?>
             <p><span class="error">* required field</span></p>
             <form class="needs-validation" novalidate>
               <div class="form-row">
                 <div class="col-md-4 mb-3">
-                  <label for="validationTooltip01">First name</label><span class="error"> * <?php echo $firstNameErr;?></span>
-                  <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" required>
+                  <label for="inputFirstName">First Name</label><span class="error"> * <?php echo $firstNameErr;?></span>
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                  <label for="validationTooltip02">Middle name</label>
-                  <input type="text" class="form-control" id="validationTooltip02" placeholder="Middle name" required>
+                  <label for="inputMiddleName">Middle Name</label>
+                  <input type="text" class="form-control" id="inputMiddleName" placeholder="Middle Name" required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="validationTooltip02">Last name</label>
-                <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" required>
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                 <div class="valid-tooltip">
                   Looks good!
                 </div>
@@ -84,8 +84,8 @@
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                  <label for="validationTooltip02">Phone number</label>
-                  <input type="tel" class="form-control" id="validationTooltip05" placeholder="111-1111-1111" required>
+                  <label for="inputPhoneNumber">Phone number</label>
+                  <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                   <div class="invalid-tooltip">
                     Please provide a valid cell phone number.
                   </div>
@@ -123,9 +123,17 @@
 <?php
 function check_empty_required_fields() {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["email"])) {
-      global $firstNameErr;
-      $firstNameErr = "Email is required";
+    if (empty($_POST["inputFirstName"])) {
+      global $inputFirstNameErr;
+      $inputFirstNameErr = "First Name is required";
+    }
+    if (empty($_POST["inputLastName"])) {
+      global $inputLastNameErr;
+      $inputLastNameErr = "Last Name is required";
+    }
+    if (empty($_POST["inputPhoneNumber"])) {
+      global $inputPhoneNumberErr;
+      $inputPhoneNumberErr = "Phone Number is required";
     }
   }
 }
