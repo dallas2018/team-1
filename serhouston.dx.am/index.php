@@ -29,7 +29,7 @@
           <?php
           if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
               !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
-                echo "NICE"
+                echo "NICE";
           }
           else {
           ?>
@@ -42,7 +42,7 @@
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="inputFirstName">First Name</label><span class="error"> * </span>
-                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
+                    <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name" required>
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputLastName">Last Name</label><span class="error"> * </span>
-                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                  <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last Name" required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
