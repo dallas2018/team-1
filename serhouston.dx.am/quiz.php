@@ -98,7 +98,7 @@
                             </label>
                 </div>
                 <button class="btn btn-primary" type="submit"><a href="goal.html">Back</a></button>
-                <button class="btn btn-primary" type="submit"><a href="specificQuestions.html">Next</a></button>
+                <button class="btn btn-primary" type="submit"><a href="specificQuestions.php">Next</a></button>
             </form>
 
 
