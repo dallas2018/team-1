@@ -33,7 +33,9 @@ include "base.php";
           if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
               !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
             ?>
-            <h2>Saving Information...</h2>
+            <h2>Saving Information
+                Redirecting...
+            </h2>
             <?php
             $firstname = mysqli_real_escape_string($dbcon, $_POST['inputFirstName']);
             $middlename = mysqli_real_escape_string($dbcon, $_POST['inputMiddleName']);
@@ -47,7 +49,9 @@ include "base.php";
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
-
+            ?>
+            <meta http-equiv="refresh" content"2;quiz.php"> 
+            <?php
           }
           else {
           ?>
