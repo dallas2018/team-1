@@ -34,7 +34,7 @@
             $from='From: Mail Contact Form <team1@serhouston.dx.am>';
             $to='2148813311@mymetropcs.com';
             $subject='SER Houston Application';
-            $body='Please do not forget to complete your application on http://serhouston.dx.am/!';
+            $body='Please do not forget to complete your application on http://serhouston.dx.am/ !';
             #mail($to,$subject,$body,$from);
             ?>
             <form>
