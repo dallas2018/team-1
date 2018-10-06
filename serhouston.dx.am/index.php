@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputMiddleName">Middle Name</label>
-                  <input type="text" class="form-control" id="inputMiddleName" placeholder="Middle Name" required>
+                  <input type="text" class="form-control" id="inputMiddleName" placeholder="Middle Name">
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
@@ -59,20 +59,20 @@
               <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="validationTooltip03">City</label>
-                  <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
+                  <input type="text" class="form-control" id="validationTooltip03" placeholder="City">
                   <div class="invalid-tooltip">
                     Please provide a valid city.
                   </div>
                 </div>
                 <div class="col-md-3 mb-3">
                   <label for="validationTooltip04">State</label>
-                  <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
+                  <input type="text" class="form-control" id="validationTooltip04" placeholder="State">
                   <div class="invalid-tooltip">
                     Please provide a valid state.
                   </div>
                 </div>
                 <div class="col-md-3 mb-3">
-                  <label for="validationTooltip05">Zip</label>
+                  <label for="validationTooltip05">Zip</label></label><span class="error"> * </span>
                   <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
                   <div class="invalid-tooltip">
                     Please provide a valid zip.
@@ -88,7 +88,7 @@
               </div>
               <div class="col-md-4 mb-3">
                 <label for="validationTooltip02">County</label>
-                <input type="text" class="form-control" id="validationTooltip05" placeholder="Brazoria" required>
+                <input type="text" class="form-control" id="validationTooltip05" placeholder="Brazoria">
                 <div class="invalid-tooltip">
                   Please provide a County.
                 </div>
