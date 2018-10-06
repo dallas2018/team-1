@@ -8,18 +8,46 @@ include "base.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Form</title>
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="app.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
   <style>
     .error {color: #FF0000;}
   </style>
+  <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function () {
+            //Increment the idle time counter every minute.
+            var idleInterval = setInterval(timerIncrement, 1000); // 1 minute
+            //Zero the idle timer on mouse movement.
+            $(this).mousemove(function (e) {
+                idleTime = 0;
+            });
+            $(this).keypress(function (e) {
+                idleTime = 0;
+            });
+        });
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime > 1) { // 20 minutes
+                $("#myModal").modal('show');
+            }
+        }
+        function refreshPage(){
+            window.location.reload();
+        } 
+  </script>
 </head>
 
 <body>
   <!--  -->
+  <?php
+  launch_modal()
+  ?>
   <div class="container" class="contain1">
     <div class="row">
       <div class="col-lg-4, col-med-3">
@@ -33,7 +61,9 @@ include "base.php";
           if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
               !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
             ?>
-            <h2>Saving Information...</h2>
+            <h2>Saving Information<br>
+                Redirecting...
+            </h2>
             <?php
             $firstname = mysqli_real_escape_string($dbcon, $_POST['inputFirstName']);
             $middlename = mysqli_real_escape_string($dbcon, $_POST['inputMiddleName']);
@@ -47,7 +77,9 @@ include "base.php";
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
-
+            ?>
+            <meta http-equiv="refresh" content"2;quiz.php"> 
+            <?php
           }
           else {
           ?>
@@ -60,14 +92,14 @@ include "base.php";
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="inputFirstName">First Name</label><span class="error"> * </span>
-                    <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name" required>
+                    <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name" required>
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="inputMiddleName">Middle Name</label>
-                    <input type="text" class="form-control" name="inputMiddleName" id="inputMiddleName" placeholder="Middle Name">
+                    <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputMiddleName" id="inputMiddleName" placeholder="Middle Name">
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -75,7 +107,7 @@ include "base.php";
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputLastName">Last Name</label><span class="error"> * </span>
-                  <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last Name" required>
+                  <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last Name" required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
@@ -83,28 +115,28 @@ include "base.php";
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="inputCity">City</label>
-                    <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City">
+                    <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputCity" id="inputCity" placeholder="City">
                     <div class="invalid-tooltip">
                       Please provide a valid city.
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="inputState">State</label>
-                    <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State">
+                    <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputState" id="inputState" placeholder="State">
                     <div class="invalid-tooltip">
                       Please provide a valid state.
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="inputZipcode">Zip</label></label><span class="error"> * </span>
-                    <input type="text" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
+                    <input type="text" pattern="^\d{5}(?:[-\s]\d{4})?$" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
                     <div class="invalid-tooltip">
                       Please provide a valid zip.
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="inputPhoneNumber">Phone number</label><span class="error"> * </span>
-                    <input type="tel" class="form-control" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="111-1111-1111" required>
+                    <label for="inputPhoneNumber">Phone Number</label><span class="error"> * </span>
+                    <input type="tel" class="form-control" pattern="\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                     <div class="invalid-tooltip">
                       Please provide a valid cell phone number.
                     </div>
@@ -112,7 +144,7 @@ include "base.php";
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputCounty">County</label>
-                  <input type="text" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
+                  <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
                   <div class="invalid-tooltip">
                     Please provide a County.
                   </div>
@@ -120,7 +152,7 @@ include "base.php";
           </div>
           <div class="col-md-4 mb-3">
             <label for="inputBirthday">Date of Birth</label><span class="error"> * </span>
-            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" required>
+            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" max="1900-1-1" required>
             <div class="invalid-tooltip">
               Please provide a County.
             </div>
@@ -142,4 +174,40 @@ include "base.php";
     crossorigin="anonymous"></script>
 </body>
 
+<?php
+function launch_modal()
+{?>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You're Almost There!</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="d-inline-flex">
+          <div class="d-flex justify-content-between">
+                  <div class="container"> 
+                          <img src="images/ciara.jpg" alt="ser ciara">
+                  </div> 
+                  <p>Hello, I'm Ciara and I'm here to help. <br/>
+                  It looks like you've been inactive for the past 10 minutes, so don't forget to finish! <br/>
+                  If you need help filling out the application, feel free to call me at 713.773.6000 x 140, or email me at Ciara.Major@serhouston.org</p>       
+            </div> 
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="refreshPage()">Resume Application</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
+  <?php
+}
+?>
+?>
 </html>

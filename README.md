@@ -3,8 +3,9 @@ Building an interactive, user-friendly portal application for SER Houston: a loc
 
 
 Backend Tasks
-- [ ] Figure out timer and html pop-up for user inactivity 
+- [x] Figure out timer and html pop-up for user inactivity 
 - [ ] Save forms for users and allow them to pick up where they left off 
-- [ ] Save information to database when "Next" button is pressed 
+- [ ] Save information to database when "Next" button is pressed
+- [x] Regulation and standardization of form input data with regex
 
 

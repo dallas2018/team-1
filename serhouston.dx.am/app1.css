@@ -1,0 +1,108 @@
+
+body{
+	background: url(gradient.jpg);
+	background-size: cover;
+	background-position: center;
+	font-family: 'Lato', sans-serif;
+	color: white;
+}
+html{
+	height: 100%;
+}
+.contain1 {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+h1{
+	font-weight: 700;
+	font-size: 5em;
+}
+p{
+	border: 1px solid white;
+	padding: 20px; 
+	max-width: 700px;
+	width: 80%;
+	margin: 20px auto;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.topp{
+	padding-top: 20px;
+}
+.btn{
+	font-size: 20px;
+}
+.bordering{
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	padding-left: 9px;
+	text-align: center;
+}
+#content {
+	text-align: center;
+	padding-top: 30%;
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+				 0px 8px 13px rgba(0, 0, 0, 0.1),
+				 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+.navbar-inverse{
+	background: #2c3e50 ;
+}
+.navbar-inverse .navbar-nav li a{
+	color: white;
+}
+.navbar-inverse .navbar-brand{
+	color: white;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
+	background: #2c3e50
+}
+hr{
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.btn-info:hover{
+	cursor: pointer;
+	color: white;
+}
+#mc_embed_signup{
+	color: black;
+}
+p{
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+				 0px 8px 13px rgba(0, 0, 0, 0.1),
+				 0px 18px 23px rgba(0, 0, 0, 0.1);
+	font-family: 'Lato', sans-serif;
+}
+
+.imgbtn{
+	width: 20%;
+	height: 20%;
+}
+.imgbuttons{
+	align: center;
+	width: 400px;
+}
+
+#question{
+	align-content: center;
+	text-align: center;
+	font-size: 4em;
+}
+a { 
+	color: white;
+}
+
+label > input{ /* HIDE RADIO */
+	visibility: hidden; /* Makes input not-clickable */
+	position: absolute; /* Remove input from document flow */
+}
+  label > input + img{ /* IMAGE STYLES */
+	cursor:pointer;
+	border:2px solid transparent;
+}
+  label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+	border:2px solid #f00;
+}
