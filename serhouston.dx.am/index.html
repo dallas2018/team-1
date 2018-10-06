@@ -87,7 +87,16 @@
   </div>
   <div class="col-md-4 mb-3">
       <label for="validationTooltip02">Cell-Phone Carrier</label>
-      <input type="date" class="form-control" id="validationTooltip05" placeholder="T-Mobile" required>
+      <!--<input type="date" class="form-control" id="validationTooltip05" placeholder="T-Mobile" required>-->
+      <input list="carriers" name="carrier" placeholder="none">
+        <datalist id="carriers">
+          <option value="AT&T">AT&T</option>
+          <option value="Verizon">Verizon</option>
+          <option value="T-Mobile">T-Mobile</option>
+          <option value="Verizon">Verizon</option>
+          <option value="Sprint">Sprint</option>
+          <option value="Boost Mobile">Boost Mobile</option>
+        </datalist>
       <div class="invalid-tooltip">
         Please provide a mobile carrier.
       </div>
