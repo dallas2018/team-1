@@ -23,8 +23,8 @@ include "base.php";
 				$lastname = mysqli_real_escape_string($dbcon, $_POST['lastname']);
 				$phone = mysqli_real_escape_string($dbcon, $_POST['phone']);
 				
-                                $adduser = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber) 
-                                                        VALUES('".$firstname."', '".$lastname."', '".$phone."')");
+                $adduser = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber) 
+                                                VALUES('".$firstname."', '".$lastname."', '".$phone."')");
                                 
 				$_SESSION['Firstname'] = $firstname;
 				$_SESSION['Lastname'] = $lastname;
