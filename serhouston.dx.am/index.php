@@ -29,7 +29,9 @@
           <?php
           if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
               !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
-                echo "NICE";
+            ?>
+            <h2>Saving Information...</h2>
+            <?php
           }
           else {
           ?>
@@ -101,7 +103,7 @@
                 </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="validationTooltip02">Date of Birth</label>
+            <label for="validationTooltip02">Date of Birth</label><span class="error"> * </span>
             <input type="date" class="form-control" id="validationTooltip05" placeholder="MM/DD/YYYY" required>
             <div class="invalid-tooltip">
               Please provide a County.
