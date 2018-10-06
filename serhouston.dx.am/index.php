@@ -60,12 +60,13 @@ include "base.php";
             <?php
             $firstname = mysqli_real_escape_string($dbcon, $_POST['inputFirstName']);
             $lastname = mysqli_real_escape_string($dbcon, $_POST['inputLastName']);
-            $city = mysqli_real_escape_string($dbcon, $_POST['inputCity']);
-            $state = mysqli_real_escape_string($dbcon, $_POST['inputState']);
+            //$city = mysqli_real_escape_string($dbcon, $_POST['inputCity']);
+            //$state = mysqli_real_escape_string($dbcon, $_POST['inputState']);
             $zipcode = mysqli_real_escape_string($dbcon, $_POST['inputZipcode']);
             $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhone']);
-            $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
+            //$county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
             $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
+            
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
             ?>
