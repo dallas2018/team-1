@@ -71,8 +71,8 @@ include "base.php";
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
             
-            $_SESSION['phone'] = $phonenumber
-            $_SESSION['carrier'] = $carrier
+            $_SESSION['phone'] = $phonenumber;
+            $_SESSION['carrier'] = $carrier;
             
             ?>
             <meta http-equiv="refresh" content="2;goal.php"> 
