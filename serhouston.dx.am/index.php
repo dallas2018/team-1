@@ -49,7 +49,31 @@ include "base.php";
 				<hr>
 				
 				<h2 class="bordering">Contact Form</h2>
-				<hr>
+        <hr>
+        <?php
+        if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
+              !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
+            ?>
+            <h2>Saving Information<br>
+                Redirecting...
+            </h2>
+            <?php
+            $firstname = mysqli_real_escape_string($dbcon, $_POST['inputFirstName']);
+            $lastname = mysqli_real_escape_string($dbcon, $_POST['inputLastName']);
+            $city = mysqli_real_escape_string($dbcon, $_POST['inputCity']);
+            $state = mysqli_real_escape_string($dbcon, $_POST['inputState']);
+            $zipcode = mysqli_real_escape_string($dbcon, $_POST['inputZipcode']);
+            $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhone']);
+            $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
+            $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
+            $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
+                                                    VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
+            ?>
+            <meta http-equiv="refresh" content="2;goal.php"> 
+        <?php
+        }
+        else {
+        ?>
 				<p id="contacts">
 				<div class="progress">
   <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">10%</div>
@@ -136,7 +160,10 @@ include "base.php";
   <button class="btn btn-primary" type="submit">Next</button>
 
 </form>
-				</p>
+        </p>
+        <?php
+      }
+      ?>
 				<p class="image">
 		<img src="serlogo50.png" class="center">
 		</p>
