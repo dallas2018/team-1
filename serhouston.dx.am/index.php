@@ -54,72 +54,71 @@ include "base.php";
 				<div class="progress">
   <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">10%</div>
 </div>
-					<form class="needs-validation" novalidate>
+					<form method="post" action="index.php" name="form" id="form">
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">First name</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="First name"  required>
+      <label for="inputFirstName">First name</label>
+      <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First name"  required>
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Last name</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name"  required>
+      <label for="inputLastName">Last name</label>
+      <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last name"  required>
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
      </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Date of Birth</label>
-      <input type="date" class="form-control" id="validationTooltip02" placeholder="MM/DD/YYYY"  required>
+      <label for="inputBirthday">Date of Birth</label>
+      <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY"  required>
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationTooltip03">City</label>
-      <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required>
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City" required>
       <div class="invalid-tooltip">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationTooltip04">State</label>
-      <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required>
+      <label for="inputState">State</label>
+      <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State" required>
       <div class="invalid-tooltip">
         Please provide a valid state.
       </div>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationTooltip05">Zip</label>
-      <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required>
+      <label for="inputZipcode">Zip</label>
+      <input type="text" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
       <div class="invalid-tooltip">
         Please provide a valid zip.
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">County</label>
-      <input type="tel" class="form-control" id="validationTooltip05" placeholder="Brazoria" required>
+      <label for="inputCounty">County</label>
+      <input type="tel" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria" required>
       <div class="invalid-tooltip">
         Please provide a valid county.
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Phone Number</label>
-      <input type="text" class="form-control" id="validationTooltip05" placeholder="111-1111-1111" required>
+      <label for="inputPhone">Phone Number</label>
+      <input type="text" class="form-control" name="inputPhone" id="inputPhone" placeholder="111-1111-1111" required>
       <div class="invalid-tooltip">
         Please provide a valid cell phone number.
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-3">
-      <label for="carriers">Cell-Phone Carrier</label>
-      <!--<input type="date" class="form-control" id="validationTooltip05" placeholder="T-Mobile" required>-->
-      <input list="carriers" class="form-control" name="carrier" id="carrier" placeholder="none" required>
+      <label for="inputCarrier">Cell-Phone Carrier</label>
+      <input list="carriers" class="form-control" name="inputCarrier" id="inputCarrier" placeholder="none" required>
         <datalist id="carriers">
           <option value="AT&T">AT&T</option>
           <option value="Verizon">Verizon</option>
