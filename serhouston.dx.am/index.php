@@ -74,9 +74,6 @@ include "base.php";
             $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhoneNumber']);
             $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
             $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
-              <div class="invalid-tooltip">
-                      Please provide a valid city.
-                    </div>
             }
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
