@@ -16,10 +16,36 @@ include "base.php";
   <style>
     .error {color: #FF0000;}
   </style>
+  <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function () {
+            //Increment the idle time counter every minute.
+            var idleInterval = setInterval(timerIncrement, 10000); // 1 minute
+            //Zero the idle timer on mouse movement.
+            $(this).mousemove(function (e) {
+                idleTime = 0;
+            });
+            $(this).keypress(function (e) {
+                idleTime = 0;
+            });
+        });
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime > 1) { // 20 minutes
+                $("#myModal").modal('show');
+            }
+        }
+        function refreshPage(){
+            window.location.reload();
+        } 
+  </script>
 </head>
 
 <body>
   <!--  -->
+  <?php
+  launch_modal()
+  ?>
   <div class="container" class="contain1">
     <div class="row">
       <div class="col-lg-4, col-med-3">
@@ -146,4 +172,38 @@ include "base.php";
     crossorigin="anonymous"></script>
 </body>
 
+<?php
+function launch_modal()
+{?>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">You're Almost There!</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="d-inline-flex">
+          <div class="d-flex justify-content-between">
+                  <div class="container"> 
+                          <img src="images/ciara.jpg" alt="ser ciara">
+                  </div> 
+                  <p>Hello, I'm Ciara and I'm here to help. <br/>
+                  It looks like you've been inactive for the past 10 minutes, so don't forget to finish! <br/>
+                  If you need help filling out the application, feel free to call me at 713.773.6000 x 140, or email me at Ciara.Major@serhouston.org</p>       
+            </div> 
+          </div> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="refreshPage()">Resume Application</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+}
+?>
+?>
 </html>
