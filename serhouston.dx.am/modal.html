@@ -4,16 +4,44 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function () {
+            //Increment the idle time counter every minute.
+            var idleInterval = setInterval(timerIncrement, 1000); // 1 minute
+
+            //Zero the idle timer on mouse movement.
+            $(this).mousemove(function (e) {
+                idleTime = 0;
+            });
+            $(this).keypress(function (e) {
+                idleTime = 0;
+            });
+        });
+
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime > 1) { // 20 minutes
+                $("#myModal").modal('show');
+            }
+        }
+      
+        function refreshPage(){
+            window.location.reload();
+        } 
+      
+      
+  </script>   
 </head>
 <body>
 
 <div class="container">
   <h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -22,21 +50,29 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+          <h5 class="modal-title">You're Almost There!</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">You're Almost There!</h4>
         </div>
         <div class="modal-body">
-          <p>Looks like you've been inactive for the past 10 minutes. Fill out the information!</p>
+          <p>Looks like you've been inactive for the past 10 minutes, let us k</p>
+          <img src="images/ciara.jpg" alt="ser ciara">
+            
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Resume Application</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="refreshPage()">Resume Application</button>
         </div>
       </div>
       
     </div>
   </div>
-  
 </div>
 
 </body>
 </html>
+
+<!--
+Email: Ciara.Major@serhouston.org
+Title: Senior Manager of Grants & Communications
+Phone: 713.773.6000 x140
+
+-->
