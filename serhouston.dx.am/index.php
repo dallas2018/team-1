@@ -66,9 +66,14 @@ include "base.php";
             $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhone']);
             //$county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
             $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
+            $carrier = mysqli_real_escape_string($dbcon, $_POST['inputCarrier']);
             
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
+            
+            $_SESSION['phone'] = $phonenumber
+            $_SESSION['carrier'] = $carrier
+            
             ?>
             <meta http-equiv="refresh" content="2;goal.php"> 
         <?php
@@ -83,14 +88,14 @@ include "base.php";
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="inputFirstName">First name</label>
-      <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First name"  required>
+      <input type="text" class="form-control" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" name="inputFirstName" id="inputFirstName" placeholder="First name"  required>
       <div class="valid-tooltip">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="inputLastName">Last name</label>
-      <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last name"  required>
+      <input type="text" class="form-control" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" name="inputLastName" id="inputLastName" placeholder="Last name"  required>
       <div class="valid-tooltip">
         Looks good!
       </div>
@@ -106,28 +111,28 @@ include "base.php";
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City">
+      <input type="text" class="form-control" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" name="inputCity" id="inputCity" placeholder="City">
       <div class="invalid-tooltip">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="inputState">State</label>
-      <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State">
+      <input type="text" class="form-control" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" name="inputState" id="inputState" placeholder="State">
       <div class="invalid-tooltip">
         Please provide a valid state.
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="inputZipcode">Zip</label>
-      <input type="text" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
+      <input type="text" class="form-control" pattern="^\d{5}(?:[-\s]\d{4})?$" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
       <div class="invalid-tooltip">
         Please provide a valid zip.
       </div>
     </div>
     <div class="col-md-4 mb-3">
       <label for="inputCounty">County</label>
-      <input type="tel" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
+      <input type="tel" class="form-control" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" name="inputCounty" id="inputCounty" placeholder="Brazoria">
       <div class="invalid-tooltip">
         Please provide a valid county.
       </div>
@@ -135,7 +140,7 @@ include "base.php";
   </div>
   <div class="col-md-4 mb-3">
       <label for="inputPhone">Phone Number</label>
-      <input type="text" class="form-control" name="inputPhone" id="inputPhone" placeholder="111-1111-1111" required>
+      <input type="text" class="form-control" class="form-control" pattern="^\d{10}$" name="inputPhone" id="inputPhone" placeholder="111-1111-1111" required>
       <div class="invalid-tooltip">
         Please provide a valid cell phone number.
       </div>
