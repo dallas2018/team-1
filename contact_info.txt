@@ -1,0 +1,24 @@
+Contact Info Page:
+
+Required*
+1. First Name*
+3. Middle Name
+2. Last Name*
+3. How did you hear about SER jobs for Progress?*
+4. Street Address*
+5. City*
+6. State*
+7. Zip code*
+8. County*
+9. Date of Birth*
+10. Phone number* (prefer cell phone)
+
+Extraneous 
+- Social security #
+- Email address
+- Work/home phone
+- Social Media:
+	Facebook URL
+	Twitter Handle
+	Instagram username
+	LinkedIn Profile
