@@ -13,6 +13,9 @@ include "base.php";
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="app.css">
+  <style>
+    .error {color: #FF0000;}
+  </style>
 </head>
 
 <body>
@@ -31,11 +34,19 @@ include "base.php";
               <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">10%</div>
             </div>
+            <?php
+              // define variables and set to empty values
+              $emailErr = "";
+              $inputEmail = "";
+              check_empty_required_fields()
+            ?>
+            <p><span class="error">* required field</span></p>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="form" id="form">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail">Email</label>
                   <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                  <span class="error">* <?php echo $nameErr;?></span>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPassword">Password</label>
@@ -82,7 +93,15 @@ include "base.php";
       </div>
     </div>
   </div>
-
+<?php
+function check_empty_required_fields() {
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["email"])) {
+      $emailErr = "Email is required";
+    }
+  }
+}
+?>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
