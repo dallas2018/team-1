@@ -79,14 +79,14 @@
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="inputZipcode">Zip</label></label><span class="error"> * </span>
-                    <input type="text" class="form-control" id="inputZipcode" placeholder="Zip" required>
+                    <input type="text" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
                     <div class="invalid-tooltip">
                       Please provide a valid zip.
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="inputPhoneNumber">Phone number</label><span class="error"> * </span>
-                    <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="111-1111-1111" required>
+                    <input type="tel" class="form-control" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                     <div class="invalid-tooltip">
                       Please provide a valid cell phone number.
                     </div>
