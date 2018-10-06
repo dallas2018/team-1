@@ -55,7 +55,7 @@ p{
 }
 .popup{
 	color: black;
-	align: center;
+	box-align: center;
 }
 .navbar-inverse{
 	background: #2c3e50 ;
