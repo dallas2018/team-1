@@ -35,7 +35,7 @@
             $to=$_SESSION['phone'].'@mymetropcs.com';
             $subject='SER Houston Application';
             $body='Please do not forget to complete your application on http://serhouston.dx.am/ !';
-            #mail($to,$subject,$body,$from);
+            mail($to,$subject,$body,$from);
             ?>
             <form>
                     <div class="container" id="imgbuttons">
