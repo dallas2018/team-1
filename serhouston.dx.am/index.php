@@ -31,16 +31,11 @@
               <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">10%</div>
             </div>
-            <?php
-              // define variables and set to empty values
-              $inputFirstNameErr = $inputLastNameErr = $inputPhoneNumberErr = "";
-              check_empty_required_fields()
-            ?>
             <p><span class="error">* required field</span></p>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="form" id="form">
               <div class="form-row">
                 <div class="col-md-4 mb-3">
-                  <label for="inputFirstName">First Name</label><span class="error"> * <?php echo $inputFirstNameErr;?></span>
+                  <label for="inputFirstName">First Name</label><span class="error"> * </span>
                   <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
                   <div class="valid-tooltip">
                     Looks good!
@@ -55,7 +50,7 @@
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="inputLastName">Last Name</label><span class="error"> * <?php echo $inputLastNameErr;?></span>
+                <label for="inputLastName">Last Name</label><span class="error"> * </span>
                 <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                 <div class="valid-tooltip">
                   Looks good!
@@ -84,7 +79,7 @@
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                  <label for="inputPhoneNumber">Phone number</label><span class="error"> * <?php echo $inputPhoneNumberErr;?></span>
+                  <label for="inputPhoneNumber">Phone number</label><span class="error"> * </span>
                   <input type="tel" class="form-control" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                   <div class="invalid-tooltip">
                     Please provide a valid cell phone number.
@@ -119,24 +114,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 </body>
-
-<?php
-function check_empty_required_fields() {
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["inputFirstName"])) {
-      global $inputFirstNameErr;
-      $inputFirstNameErr = "First Name is required";
-    }
-    if (empty($_POST["inputLastName"])) {
-      global $inputLastNameErr;
-      $inputLastNameErr = "Last Name is required";
-    }
-    if (empty($_POST["inputPhoneNumber"])) {
-      global $inputPhoneNumberErr;
-      $inputPhoneNumberErr = "Phone Number is required";
-    }
-  }
-}
-?>
 
 </html>
