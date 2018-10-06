@@ -1,3 +1,6 @@
+<?php
+include "base.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -44,7 +47,7 @@
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
-                                                    
+
           }
           else {
           ?>
