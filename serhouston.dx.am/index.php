@@ -103,8 +103,8 @@ include "base.php";
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label for="inputPhoneNumber">Phone number</label><span class="error"> * </span>
-                    <input type="tel" class="form-control" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="111-1111-1111" required>
+                    <label for="inputPhoneNumber">Phone Number</label><span class="error"> * </span>
+                    <input type="tel" class="form-control" pattern="\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="111-1111-1111" required>
                     <div class="invalid-tooltip">
                       Please provide a valid cell phone number.
                     </div>
