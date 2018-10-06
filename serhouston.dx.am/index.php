@@ -52,7 +52,7 @@ include "base.php";
         <hr>
         <?php
         if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
-              !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
+              !empty($_POST['inputPhone']) && !empty($_POST['inputZipcode'])) {
             ?>
             <h2>Saving Information<br>
                 Redirecting...
@@ -105,14 +105,14 @@ include "base.php";
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="inputCity">City</label>
-      <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City" required>
+      <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City">
       <div class="invalid-tooltip">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="inputState">State</label>
-      <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State" required>
+      <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State">
       <div class="invalid-tooltip">
         Please provide a valid state.
       </div>
@@ -126,7 +126,7 @@ include "base.php";
     </div>
     <div class="col-md-4 mb-3">
       <label for="inputCounty">County</label>
-      <input type="tel" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria" required>
+      <input type="tel" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
       <div class="invalid-tooltip">
         Please provide a valid county.
       </div>
