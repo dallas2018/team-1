@@ -33,7 +33,7 @@ include "base.php";
           if(!empty($_POST['inputFirstName']) && !empty($_POST['inputLastName']) && 
               !empty($_POST['inputPhoneNumber']) && !empty($_POST['inputZipcode'])) {
             ?>
-            <h2>Saving Information
+            <h2>Saving Information<br>
                 Redirecting...
             </h2>
             <?php
