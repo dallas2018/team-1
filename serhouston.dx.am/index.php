@@ -37,7 +37,6 @@ include "base.php";
             <?php
               // define variables and set to empty values
               $emailErr = "";
-              $inputEmail = "";
               check_empty_required_fields()
             ?>
             <p><span class="error">* required field</span></p>
@@ -97,7 +96,7 @@ include "base.php";
 function check_empty_required_fields() {
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
-      $emailErr = "Email is required";
+      global $emailErr = "Email is required";
     }
   }
 }
