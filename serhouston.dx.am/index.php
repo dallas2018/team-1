@@ -60,14 +60,14 @@ include "base.php";
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
                     <label for="inputFirstName">First Name</label><span class="error"> * </span>
-                    <input type="text" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name" required>
+                    <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputFirstName" id="inputFirstName" placeholder="First Name" required>
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="inputMiddleName">Middle Name</label>
-                    <input type="text" class="form-control" name="inputMiddleName" id="inputMiddleName" placeholder="Middle Name">
+                    <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputMiddleName" id="inputMiddleName" placeholder="Middle Name">
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -75,7 +75,7 @@ include "base.php";
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputLastName">Last Name</label><span class="error"> * </span>
-                  <input type="text" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last Name" required>
+                  <input type="text" pattern="^(?=.{1,40}$)[a-zA-Z]+(?:[-'\s][a-zA-Z]+)*$" class="form-control" name="inputLastName" id="inputLastName" placeholder="Last Name" required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
@@ -83,21 +83,21 @@ include "base.php";
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
                     <label for="inputCity">City</label>
-                    <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City">
+                    <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputCity" id="inputCity" placeholder="City">
                     <div class="invalid-tooltip">
                       Please provide a valid city.
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="inputState">State</label>
-                    <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State">
+                    <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputState" id="inputState" placeholder="State">
                     <div class="invalid-tooltip">
                       Please provide a valid state.
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
                     <label for="inputZipcode">Zip</label></label><span class="error"> * </span>
-                    <input type="text" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
+                    <input type="text" pattern="^\d{5}(?:[-\s]\d{4})?$" class="form-control" name="inputZipcode" id="inputZipcode" placeholder="Zip" required>
                     <div class="invalid-tooltip">
                       Please provide a valid zip.
                     </div>
@@ -112,7 +112,7 @@ include "base.php";
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="inputCounty">County</label>
-                  <input type="text" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
+                  <input type="text" pattern="^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
                   <div class="invalid-tooltip">
                     Please provide a County.
                   </div>
@@ -120,7 +120,7 @@ include "base.php";
           </div>
           <div class="col-md-4 mb-3">
             <label for="inputBirthday">Date of Birth</label><span class="error"> * </span>
-            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" required>
+            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" max="1900-1-1" required>
             <div class="invalid-tooltip">
               Please provide a County.
             </div>
