@@ -37,7 +37,7 @@
               check_empty_required_fields()
             ?>
             <p><span class="error">* required field</span></p>
-            <form class="needs-validation" novalidate>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="form" id="form">
               <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="inputFirstName">First Name</label><span class="error"> * <?php echo $inputFirstNameErr;?></span>
