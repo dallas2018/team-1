@@ -133,7 +133,7 @@ include "base.php";
     </div>
   </div>
  
-  <button class="btn btn-primary-right" type="submit"><a href="goal.php">Next</a></button>
+  <button class="btn btn-primary" type="submit">Next</button>
 
 </form>
 				</p>
