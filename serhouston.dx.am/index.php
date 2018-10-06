@@ -45,8 +45,8 @@ include "base.php";
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail">Email</label>
+                  <span class="error">* <?php echo $emailErr;?></span>
                   <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                  <span class="error">* <?php echo $nameErr;?></span>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPassword">Password</label>
