@@ -16,6 +16,23 @@ html{
 h1{
 	font-weight: 700;
 	font-size: 5em;
+	text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+				 0px 8px 13px rgba(0, 0, 0, 0.1),
+				 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+.center{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.right{
+	margin-left: auto;
+	margin-right:0px;
+}
+.popup{
+	color:black;
 }
 p{
 	border: 1px solid white;
@@ -25,9 +42,23 @@ p{
 	margin: 20px auto;
 	font-family: 'Source Sans Pro', sans-serif;
 }
+/*iframe{
+	text-align: center;
+}*/
+.ending{
+	border: 0px solid white;
+	
+	max-width: 700px;
+	width: 60%;
+	margin: 20px auto;
+	font-family: 'Source Sans Pro', sans-serif;
+}
 .progress-bar{
 	border: 1px solid white;
 	
+}
+.color{
+	color: black;
 }
 .topp{
 	padding-top: 20px;
@@ -49,34 +80,26 @@ p{
 				 0px 8px 13px rgba(0, 0, 0, 0.1),
 				 0px 18px 23px rgba(0, 0, 0, 0.1);
 }
-#header{
-	color: black;
-	padding-left: 5px;
-}
-.popup{
-	color: black;
-	box-align: center;
-}
-.navbar-inverse{
-	background: #2c3e50 ;
-}
-.navbar-inverse .navbar-nav li a{
+a { 
 	color: white;
-}
-.navbar-inverse .navbar-brand{
-	color: white;
-}
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover{
-	background: #2c3e50
+	 }
+.image{
+	background-color: white;
+	 height: 20%;
+    width: 20%;
 }
 hr{
 	width: 400px;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.btn-info:hover{
+.btn-primary{
+	margin: 0 auto;
+}
+
+.btn-primary:hover{
 	cursor: pointer;
-	color: white;
+	
 }
 #mc_embed_signup{
 	color: black;
