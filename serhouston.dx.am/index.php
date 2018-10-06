@@ -31,7 +31,6 @@
               <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="25" aria-valuemin="0"
                 aria-valuemax="100">10%</div>
             </div>
-            <p><span class="error">* required field</span></p>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="form" id="form">
               <div class="form-row">
                 <div class="col-md-4 mb-3">
