@@ -73,6 +73,15 @@ include "base.php";
             $zipcode = mysqli_real_escape_string($dbcon, $_POST['inputZipcode']);
             $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhoneNumber']);
             $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
+
+            $time1 = date_create($date_1);
+            $time2 = date("m/d/y");
+            $interval = date_diff($time1, $time2);
+            if($interval < 16){
+              <div class="invalid-tooltip">
+                      Please provide a valid city.
+                    </div>
+            }
             $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
 
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
@@ -206,6 +215,5 @@ function launch_modal()
   </div>
   <?php
 }
-?>
 ?>
 </html>
