@@ -32,6 +32,19 @@
             ?>
             <h2>Saving Information...</h2>
             <?php
+            $firstname = mysqli_real_escape_string($dbcon, $_POST['inputFirstName']);
+            $middlename = mysqli_real_escape_string($dbcon, $_POST['inputMiddleName']);
+            $lastname = mysqli_real_escape_string($dbcon, $_POST['inputLastName']);
+            $city = mysqli_real_escape_string($dbcon, $_POST['inputCity']);
+            $state = mysqli_real_escape_string($dbcon, $_POST['inputState']);
+            $zipcode = mysqli_real_escape_string($dbcon, $_POST['inputZipcode']);
+            $phonenumber = mysqli_real_escape_string($dbcon, $_POST['inputPhoneNumber']);
+            $county = mysqli_real_escape_string($dbcon, $_POST['inputCounty']);
+            $birthday = mysqli_real_escape_string($dbcon, $_POST['inputBirthday']);
+
+            $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
+                                                    VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
+                                                    
           }
           else {
           ?>
@@ -51,7 +64,7 @@
                   </div>
                   <div class="col-md-4 mb-3">
                     <label for="inputMiddleName">Middle Name</label>
-                    <input type="text" class="form-control" id="inputMiddleName" placeholder="Middle Name">
+                    <input type="text" class="form-control" name="inputMiddleName" id="inputMiddleName" placeholder="Middle Name">
                     <div class="valid-tooltip">
                       Looks good!
                     </div>
@@ -66,15 +79,15 @@
                 </div>
                 <div class="form-row">
                   <div class="col-md-6 mb-3">
-                    <label for="validationTooltip03">City</label>
-                    <input type="text" class="form-control" id="validationTooltip03" placeholder="City">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" name="inputCity" id="inputCity" placeholder="City">
                     <div class="invalid-tooltip">
                       Please provide a valid city.
                     </div>
                   </div>
                   <div class="col-md-3 mb-3">
-                    <label for="validationTooltip04">State</label>
-                    <input type="text" class="form-control" id="validationTooltip04" placeholder="State">
+                    <label for="inputState">State</label>
+                    <input type="text" class="form-control" name="inputState" id="inputState" placeholder="State">
                     <div class="invalid-tooltip">
                       Please provide a valid state.
                     </div>
@@ -95,16 +108,16 @@
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                  <label for="validationTooltip02">County</label>
-                  <input type="text" class="form-control" id="validationTooltip05" placeholder="Brazoria">
+                  <label for="inputCounty">County</label>
+                  <input type="text" class="form-control" name="inputCounty" id="inputCounty" placeholder="Brazoria">
                   <div class="invalid-tooltip">
                     Please provide a County.
                   </div>
                 </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="validationTooltip02">Date of Birth</label><span class="error"> * </span>
-            <input type="date" class="form-control" id="validationTooltip05" placeholder="MM/DD/YYYY" required>
+            <label for="inputBirthday">Date of Birth</label><span class="error"> * </span>
+            <input type="date" class="form-control" name="inputBirthday" id="inputBirthday" placeholder="MM/DD/YYYY" required>
             <div class="invalid-tooltip">
               Please provide a County.
             </div>
