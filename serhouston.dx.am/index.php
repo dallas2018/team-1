@@ -78,7 +78,7 @@ include "base.php";
             $addmember = mysqli_query($dbcon, "INSERT INTO contactInfo (firstName, lastName, cellNumber, birthday, zip) 
                                                     VALUES('".$firstname."', '".$lastname."', '".$phonenumber."', '".$birthday."', '".$zipcode."')");
             ?>
-            <meta http-equiv="refresh" content"2;quiz.php"> 
+            <meta http-equiv="refresh" content="2;quiz.php">
             <?php
           }
           else {
