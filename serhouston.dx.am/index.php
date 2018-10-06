@@ -33,7 +33,7 @@ include "base.php";
         });
         function timerIncrement() {
             idleTime = idleTime + 1;
-            if (idleTime > 1) { // 20 minutes
+            if (idleTime > 4) { // 20 minutes
                 $("#myModal").modal('show');
             }
         }
@@ -182,8 +182,8 @@ function launch_modal()
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">You're Almost There!</h5>
+        <div class="modal-header" id="header">
+          You're Almost There!
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
@@ -192,9 +192,9 @@ function launch_modal()
                   <div class="container"> 
                           <img src="images/ciara.jpg" alt="ser ciara">
                   </div> 
-                  <p>Hello, I'm Ciara and I'm here to help. <br/>
+                  <div class="popup">Hello, I'm Ciara and I'm here to help. <br/>
                   It looks like you've been inactive for the past 10 minutes, so don't forget to finish! <br/>
-                  If you need help filling out the application, feel free to call me at 713.773.6000 x 140, or email me at Ciara.Major@serhouston.org</p>       
+                  If you need help filling out the application, feel free to call me at 713.773.6000 x 140, or email me at Ciara.Major@serhouston.org</div>       
             </div> 
           </div> 
         </div>
